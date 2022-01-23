@@ -13,7 +13,7 @@ $ git clone https://github.com/benjamin-feron/goalkicker-looter.git
 
 ## Usage
 ```
-./goalkicker-looter.sh [OPTIONS] [NAME]
+$ ./goalkicker-looter.sh [OPTIONS] [NAME]
 
   Name:                  Book name. To list available books, use -n or --name option.
                          If not specified, will download all books.
