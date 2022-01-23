@@ -11,7 +11,7 @@ show_help () {
                          If not specified, will download all books.
   Options:
     -d, --destination    Destination directory, default: ./books.
-    -l, --list           List available books.
+    -l, --list           Only list available books, does not download them.
     -f, --force          Force downloading of already downloaded books.
     --help               Show help"
 }
