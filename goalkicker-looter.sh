@@ -7,7 +7,7 @@
 show_help () {
   echo "Usage: goalkicker-looter [OPTIONS] [NAME]
 
-  Name:                  Book name. To list available books, use -n or --name option.
+  Name:                  Book name. To list available books, use -l or --list option.
                          If not specified, will download all books.
   Options:
     -d, --destination    Destination directory, default: ./books.

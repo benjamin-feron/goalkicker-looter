@@ -15,7 +15,7 @@ $ git clone https://github.com/benjamin-feron/goalkicker-looter.git
 ```
 $ ./goalkicker-looter.sh [OPTIONS] [NAME]
 
-  Name:                  Book name. To list available books, use -n or --name option.
+  Name:                  Book name. To list available books, use -l or --list option.
                          If not specified, will download all books.
   Options:
     -d, --destination    Destination directory, default: ./books.
