@@ -56,11 +56,16 @@ done
 NAME="$1"
 shift
 
+# Requirements
+command -v curl &> /dev/null || (echo 'Curl not found, you must install it' && exit 1)
+
 # Make destination directory
 [ -d "$DEST" ] || mkdir "$DEST"
 
 # Obtain books list
+echo "Obtening book list..."
 books=$(curl -s $URL | grep -Eo 'href="[^"]*Book[0-9]*' | grep -Ev https\? | cut -c 7-)
+echo 'Done.'
 
 # Check existing of specified book
 [ ! -z "$NAME" ] && [[ ! ${books[*]} =~ (^|[[:space:]])"${NAME}Book"($|[[:space:]]) ]] && echo "Book not found, use -l or --list option without -n to list all available books" && exit 1
@@ -80,9 +85,12 @@ for book in $books; do
   book_file_name=`curl -s "$URL/$book/" | grep -e '.*<button.\+class="download".\+[a-z]<\/button>' | sed "s/.\+onclick=\"location\.href='\(.\+\)'.\+/\1/"`
   book_dest="$DEST/$book_file_name"
   echo "Downloading $URL/$book_page_url/$book_file_name..."
-  [[ $FORCE == 0 ]] && [ -f "$book_dest" ] && echo "File already exists, use -f option to force downloading." && [[ "$NAME" != "" ]] && break
+  if ([[ $FORCE == 0 ]] && [ -f "$book_dest" ]); then
+    echo "File already exists, use -f option to force downloading."
+    [ ! -z "$NAME" ] && break || continue
+  fi
   curl -s "$URL/$book_page_url/$book_file_name" -o "$book_dest"
   echo "Done."
-  [[ "$NAME" != "" ]] && break
+  [ ! -z "$NAME" ] && break
 done
 
