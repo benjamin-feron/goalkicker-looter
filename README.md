@@ -9,7 +9,6 @@ A bash script that help to easily download books from https://goalkicker.com
 ## Téléchargement
 ```bash
 $ git clone https://github.com/benjamin-feron/goalkicker-looter.git
-$ ./goalkicker-looter.sh
 ```
 
 ## Usage
