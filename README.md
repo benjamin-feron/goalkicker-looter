@@ -14,8 +14,9 @@ $ ./goalkicker-looter.sh
 
 ## Options
 ```
+    -d, --destination    Destination directory.
     -l, --list           List available books.
     -n, --name           Book name. To list available books, une -n or --name option.
     -f, --force          Force downloading of already downloaded books.
-    --help               Show help
+    --help
 ```
