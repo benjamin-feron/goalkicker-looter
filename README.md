@@ -1,6 +1,6 @@
 # goalkicker-looter
 
-A bash script that help to easily download books from https://goalkicker.com.
+A bash script that help you to easily download books from https://goalkicker.com.
 
 Requires curl.
 
